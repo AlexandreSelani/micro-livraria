@@ -88,3 +88,41 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error(err);
         });
 });
+
+document.getElementById('botao-pesquisa').addEventListener('click',()=>{
+    const books = document.querySelector('.books');
+    const input=document.getElementById('input-pesquisa')
+    console.log(input.value)
+    fetch(`http://localhost:3000/product/${input.value}`)
+        .then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            throw data.statusText;
+        })
+        .then((data) => {
+            
+            if (data) {
+                books.innerHTML=''
+                books.appendChild(newBook(data));
+
+                document.querySelectorAll('.button-shipping').forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        const cep = document.querySelector(`.book[data-id="${id}"] input`).value;
+                        calculateShipping(id, cep);
+                    });
+                });
+
+                document.querySelectorAll('.button-buy').forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+                        swal('Compra de livro', 'Sua compra foi realizada com sucesso', 'success');
+                    });
+                });
+            }
+        })
+        .catch((err) => {
+            swal('Erro', 'Erro ao listar os produtos', 'error');
+            console.error(err);
+        });
+})
