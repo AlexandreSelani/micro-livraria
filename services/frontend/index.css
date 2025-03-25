@@ -72,3 +72,33 @@ body {
         min-height: 250px;
     }
 }
+#div-search{
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+}
+#input-pesquisa{
+    width: 20%;
+    height: 40%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 3%;
+    border-right-style: none;
+    border-color: transparent;
+}
+#botao-pesquisa{
+    height: 40%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: purple;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    transition: border-color 0.3s ease;
+    color: purple;
+}
+#botao-pesquisa:hover{
+    cursor: pointer;
+    border-color: white;
+    background-color: purple;
+    color: white;
+}
