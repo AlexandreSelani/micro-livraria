@@ -9,8 +9,10 @@
         <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="index.css" />
         <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+        
     </head>
     <body>
+        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
         <section class="hero is-info is-small">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -24,7 +26,17 @@
         </div>
         <div id="div-search">
             <input type="text" placeholder="digite o ID" id="input-pesquisa">
-            <button id="botao-pesquisa">Pesquisar</button>
+            <button id="botao-pesquisa">
+                
+                <dotlottie-player
+                    src="https://lottie.host/bb5ee410-8eea-403d-8fce-19e16c0ba562/xSktLVHpzU.lottie"
+                    background="transparent"
+                    speed="0"
+                    style="width: 90%; height: 90%"
+                    loop
+                    autoplay
+                ></dotlottie-player>
+            </button>
             
         </div>
         <section class="container">
